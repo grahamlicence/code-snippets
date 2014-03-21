@@ -1,4 +1,4 @@
-simple-carousel
+Code snippets
 ===============
 
 Simple continuous carousel
