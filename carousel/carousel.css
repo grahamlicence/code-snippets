@@ -1,0 +1,131 @@
+/* Example css */
+* { margin: 0; padding: 0; }
+
+.example-carousel {
+    background: #fff;
+    overflow: hidden;
+    margin: -5px auto 2px;
+    padding: 1em 3em 0.3em;
+    position: relative;
+    max-width: 57.5em;
+}
+
+.example-carousel h2 {
+    font-weight: normal;
+    font-family: arial, sans-serif;
+    margin: 5px 0 10px 0;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    color: #004280;
+}
+
+.example-carousel p {
+    font-weight: normal;
+    font-family: arial, sans-serif;
+}
+
+.example-carousel .carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    min-height: 130px;
+}
+
+.example-carousel .carousel-wrapper:before, 
+.example-carousel .carousel-wrapper:after {
+  content: "";
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  box-shadow: 5px 0 7px #fff;
+}
+
+.example-carousel .carousel-wrapper:before {
+  left: -10px;
+}
+
+.example-carousel .carousel-wrapper:after {
+  right: -10px;
+  box-shadow: -5px 0 7px #fff;
+}
+
+.example-carousel .carousel {
+    position: absolute;
+    left: 0;
+    min-height: 130px;
+    list-style: none;
+}
+
+.example-carousel .carousel p {
+    color: #004280;
+    display: block;
+    text-align: center;
+}
+
+.example-carousel .carousel-item {
+    float: left;
+    cursor: pointer;
+    width: 183.5px;
+    text-align: center;
+    min-height: 130px;
+}
+
+.example-carousel .carousel-controls a {
+    background: no-repeat 0 0;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    display: block;
+    position: absolute;
+    top: 85px;
+}
+
+.example-carousel .carousel-controls .prev {
+    background-image: url("pagination-prev-inactive.png");
+    left: 5px;
+}
+
+.example-carousel .carousel-controls .prev:focus, 
+.example-carousel .carousel-controls .prev:hover {
+    background-image: url("pagination-prev-active.png");
+}
+
+.example-carousel .carousel-controls .next {
+    background-image: url("pagination-next-inactive.png");
+    right: 5px;
+}
+
+.example-carousel .carousel-controls .next:focus, 
+.example-carousel .carousel-controls .next:hover {
+    background-image: url("pagination-next-active.png");
+}
+
+.example-carousel .carousel-pagination {
+  text-align: center;
+  padding: 1em 0;
+}
+
+.example-carousel .carousel-pagination a {
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.example-carousel .carousel-pagination .quick-link {
+  background: #8dc8e8;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.example-carousel .carousel-pagination .quick-link.active {
+  background: #0071c5;
+  cursor: default;
+}
+
+.example-carousel .carousel-pagination .quick-link:hover {
+  background: #004280;
+}
