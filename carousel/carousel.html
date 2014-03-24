@@ -1,9 +1,10 @@
 <!doctype>
-<html>
+<html class="head">
     <head>
         <link rel="stylesheet" type="text/css" href="carousel.css">
     </head>
-    <body>
+    <body class="nojs">
+        <script>document.body.className = document.body.className.replace('nojs','js');</script>
 
         <div class="example-carousel">
             <h2>Carousel</h2>
@@ -52,10 +53,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="carousel-controls">
-                <a href="#" class="prev">previous</a>
-                <a href="#" class="next">next</a>
             </div>
         </div>
         <script src="../libs/jquery-1.11.0.min.js"></script>
