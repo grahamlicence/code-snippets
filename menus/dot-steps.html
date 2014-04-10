@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body {
+            padding-top: 3em;
+        }
+        .change,
+        .show-sass {
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            cursor: pointer;
+            padding: 5px;
+            color: #3E9DF5;
+        }
+        .change {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 1em;
+        }
+        .hidden {
+            display: none;
+        }
+        .gist {
+            font-size: 12px;
+        }
+
+
+        .steps {
+          margin-bottom: 0.5em;
+          margin-top: 1em;
+          border-top: solid 3px #bcbbba;
+          text-align: center;
+        }
+        @media only screen and (min-width: 640px) {
+          .steps {
+            border-width: 5px;
+          }
+        }
+        .steps ul {
+          list-style: none;
+          padding: 0.5em;
+          margin: 0;
+          display: inline-block;
+        }
+        @media only screen and (min-width: 640px) {
+          .steps ul {
+            margin-top: 0.1em;
+          }
+        }
+        .steps li {
+          color: #bcbbba;
+          float: left;
+          font-family: "intel-lt", arial, sans-serif;
+          /*margin-right: 1.5em;*/
+          padding: 0.2em 0.5em;
+          counter-increment: count;
+          position: relative;
+        }
+        .steps li span {
+          display: none;
+        }
+        .steps li:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #bcbbba;
+          display: block;
+          position: absolute;
+          left: 35%;
+          top: -0.9em;
+        }
+        .steps li:after {
+          content: counter(count);
+          min-width: 0.85em;
+          display: inline-block;
+        }
+        @media only screen and (min-width: 640px) {
+          .steps li:before {
+            width: 20px;
+            height: 20px;
+          }
+          .steps li {
+            font-size: 1.5em;
+          }
+          .steps li span {
+            display: inline;
+          }
+          .steps li:after {
+            display: none;
+          }
+        }
+        .steps .current {
+          color: #0071c5;
+        }
+        .steps .current:before {
+          background: #a6ce39;
+        }
+        .steps .current span {
+          display: inline;
+        }
+        .steps .current:after {
+          display: none;
+        }
+        @media only screen and (min-width: 640px) {
+          .steps {
+            text-align: center;
+          }
+          .steps ul {
+            display: inline-block;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="steps">
+        <ul>
+            <li class="current"><span>Step 1</span></li>
+            <li><span>Step 2</span></li>
+            <li><span>Step 3</span></li>
+        </ul>
+    </div>
+
+    <p class="change">Change step</p>
+    <!-- <p class="show-sass">Show sass</p> -->
+
+    <div class="sass hidden">
+      <script src="https://gist.github.com/grahamlicence/9952633.js"></script>
+    </div>
+
+    <script>
+        var current = 0,
+            steps = document.getElementsByTagName('li'),
+            button = document.getElementsByTagName('p')[0],
+            sassButton = document.getElementsByClassName('show-sass')[0],
+            sass = document.getElementsByClassName('sass')[0],
+            hidden = true;
+
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            steps[current].className = '';
+            if (current < 2) {
+                current += 1;
+            } else {
+                current = 0;
+            }
+            steps[current].className = 'current';
+        });
+
+        sassButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (hidden) {
+              sass.className = sass.className.replace('hidden', '');
+            } else {
+              sass.className += 'hidden';
+            }
+            hidden = !hidden;
+        });
+    </script>
+</body>
+</html>
