@@ -30,25 +30,44 @@
 
 
         .steps {
-          margin-bottom: 0.5em;
-          margin-top: 1em;
-          border-top: solid 3px #bcbbba;
           text-align: center;
-        }
-        @media only screen and (min-width: 640px) {
-          .steps {
-            border-width: 5px;
-          }
+          margin: 1em auto 0.5em;
         }
         .steps ul {
+          border-top: solid 3px #bcbbba;
           list-style: none;
           padding: 0.5em;
           margin: 0;
           display: inline-block;
+          position: relative;
+        }
+        .steps li:first-child span:before,
+        .steps li:last-child span:before {
+          content: "";
+          background: #fff;
+          width: 55%;
+          height: 10px;
+          position: absolute;
+          top: -14px;
+        }
+        .steps li:first-child span:before {
+          left: -0.7em;
+        }
+        .steps li:last-child span:before {
+          right: -0.5em;
+        }
+        @media only screen and (min-width: 640px) {
+          /*.steps li:first-child span:before {
+            left: -0.6em;
+          }*/
+          .steps li:last-child span:before {
+            right: -0.6em;
+          }
         }
         @media only screen and (min-width: 640px) {
           .steps ul {
             margin-top: 0.1em;
+            border-width: 5px;
           }
         }
         .steps li {
@@ -61,7 +80,7 @@
           position: relative;
         }
         .steps li span {
-          display: none;
+          /*display: none;*/
         }
         .steps li:before {
           content: "";
@@ -69,20 +88,22 @@
           height: 10px;
           border-radius: 50%;
           background: #bcbbba;
+          border: solid 2px white;
           display: block;
           position: absolute;
           left: 35%;
-          top: -0.9em;
+          top: -1em;
         }
         .steps li:after {
-          content: counter(count);
+         /* content: counter(count);
           min-width: 0.85em;
-          display: inline-block;
+          display: inline-block;*/
         }
         @media only screen and (min-width: 640px) {
           .steps li:before {
             width: 20px;
             height: 20px;
+            top: -0.9em;
           }
           .steps li {
             font-size: 1.5em;
@@ -151,15 +172,15 @@
             steps[current].className = 'current';
         });
 
-        sassButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (hidden) {
-              sass.className = sass.className.replace('hidden', '');
-            } else {
-              sass.className += 'hidden';
-            }
-            hidden = !hidden;
-        });
+        // sassButton.addEventListener('click', function (e) {
+        //     e.preventDefault();
+        //     if (hidden) {
+        //       sass.className = sass.className.replace('hidden', '');
+        //     } else {
+        //       sass.className += 'hidden';
+        //     }
+        //     hidden = !hidden;
+        // });
     </script>
 </body>
 </html>
