@@ -184,3 +184,106 @@
     </script>
 </body>
 </html>
+<!--
+Sass
+
+// progress steps
+.progress {
+    text-align: center;
+    margin: 1em auto 0.5em;
+    
+    @media #{$small} {
+        text-align: center;
+    }
+
+    ul {
+        border-top: solid 3px #bcbbba;
+        list-style: none;
+        padding: 0.5em;
+        margin: 0;
+        display: inline-block;
+        position: relative;   
+
+        @media #{$small} {
+            display: inline-block;
+            margin-top: 0.1em;
+            border-width: 5px;
+        }     
+    }
+    li {
+        color: #bcbbba;
+        float: left;
+        font-family: $intel-lt;
+        padding: 0.2em 0.5em;
+        counter-increment: count;
+        position: relative;
+
+        @media #{$small} {
+            font-size: 1.5em;
+        }
+
+        &:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #bcbbba;
+            border: solid 2px white;
+            display: block;
+            position: absolute;
+            left: 40%;
+            top: -1em;
+            @media #{$small} {
+                width: 20px;
+                height: 20px;
+                top: -0.9em;
+            }
+        }
+
+        &:after {
+            @media #{$small} {
+                display: none;
+            }
+        }
+
+        &:first-child span:before,
+        &:last-child span:before {
+            content: "";
+            background: #fff;
+            width: 55%;
+            height: 10px;
+            position: absolute;
+            top: -14px;
+        }
+        &:first-child span:before {
+            left: -0.7em;
+        }
+        &:last-child span:before {
+            right: -0.5em;
+            width: 63%; 
+            @media #{$small} {
+                right: -0.7em;
+            }
+        }
+
+        span {
+            @media #{$small} {
+                display: inline;
+            }
+        }
+    }
+
+    .current {
+        color: #0071c5;
+        &:before {
+            background: #a6ce39;
+        }
+        &:after {
+            display: none;
+        }
+        span {
+            display: inline;
+        }
+    }
+}
+-->
